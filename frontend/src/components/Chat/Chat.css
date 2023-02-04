@@ -1,0 +1,203 @@
+/* --------------- CHAT -------------------------- */
+.room__chat {
+  display: block;
+  width: 70%;
+  background-color: var(--lighterDark);
+  transition: 1s all;
+}
+
+.chat__messages {
+  padding: var(--spaceSize);
+  width: 100%;
+  display: inline-block;
+  height: 450px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.chat__messages::-webkit-scrollbar {
+  width: 10px;
+  background-color: red;
+}
+.chat__messages::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: rgb(142, 142, 142);
+  cursor: grab;
+  border-radius: 4px;
+}
+.chat__messages::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: rgb(41, 41, 41);
+}
+
+
+/*  ---------------- message box --------------------- */
+.messages {
+  width: 100%;
+  display: block;
+}
+/* ------------------------ SLIDER -------------------------- */
+.slider {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  cursor: pointer;
+  z-index: 40;
+}
+.slider__span {
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+}
+.slider__icon {
+  font-size: 1rem;
+}
+.slider__notification {
+  position: absolute;
+  bottom: 55px;
+  left: -10px;
+  width: 70px;
+  text-align: center;
+  padding: 5px 0 5px 0;
+  border-radius: 10px;
+  background-color: red;
+}
+.slider__notification::after {
+  position: absolute;
+  content: "";
+  top: 99%;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid var(--dark);
+  border-right: 10px solid var(--dark);
+  border-top: 10px solid red;
+  border-bottom: 0px;
+  background-color: red;
+}
+.slider__notification-num {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: red;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+/* ------------------------ SLIDER -------------------------- */
+.message {
+  display: flex;
+  flex-direction: column;
+}
+.message__box {
+  list-style: none;
+  padding: 3px 15px 15px 55px;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 10px;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.85rem;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.989);
+}
+.message__box::before {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-bottom: 12px solid transparent;
+  border-radius: 10px;
+}
+.message__box::after {
+  position: absolute;
+  bottom: 2px;
+  content: "";
+  width: 16px;
+  height: 15px;
+  background: var(--lighterDark);
+  border-radius: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+/*----------------------------- MODIFIRE RIGHT BOX MESSAGES----------------- */
+.box--right {
+  text-align: right;
+  margin-left: auto;
+  background-color: var(--yourChatColor);
+}
+.box--right::before {
+  left: 100%;
+  transform: translateX(-60%);
+  border-bottom-right-radius: 8px;
+  border-right: 16px solid transparent;
+  border-left: 12px solid transparent;
+  background-color: var(--yourChatColor);
+}
+.box--right::after {
+  left: 100%;
+}
+/*----------------------------- MODIFIRE LEFT BOX MESSAGES----------------- */
+.box--left {
+  text-align: left;
+  margin-right: auto;
+  background-color: var(--roomMateChatColor);
+}
+.box--left::before {
+  right: 100%;
+  transform: translateX(18px);
+  border-bottom-right-radius: 8px;
+  border-right: 16px solid transparent;
+  border-left: 12px solid transparent;
+  background-color: var(--roomMateChatColor);
+}
+.box--left::after {
+  right: 100%;
+}
+
+/* NOTICE */
+.message__notice {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 10px;
+  position: relative;
+  padding-bottom: 20px;
+  font-size: 0.7rem;
+}
+.message__time {
+  position: absolute;
+  font-size: 0.5rem;
+  background-color: transparent;
+}
+.time--center {
+  top: 20px;
+  right: 50%;
+  transform: translateX(50%);
+}
+.time--underbox {
+  bottom: 2px;
+  right: 15px;
+}
+.chat--show {
+  display: block;
+  transform: translateX(0px);
+}
+@media only screen and (max-width: 600px) {
+  .slider {
+    visibility: visible;
+  }
+  .room__chat {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-100px); */
+  }
+}

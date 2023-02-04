@@ -1,0 +1,329 @@
+.lobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 100%;
+  /* height: 100vh; */
+}
+.lobby__title {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: var(--spaceSize);
+  color: var(--warmGray);
+  color: var(--orange);
+  font-family: cursive;
+  font-size: 2rem;
+}
+.lobby__container {
+  margin: 0 auto;
+  margin-bottom: auto;
+  /* background-color: var(--dark); */
+  background-color: var(--teal);
+  max-width: 800px;
+  width: 90%;
+  padding: var(--spaceSize);
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px var(--shadow);
+}
+
+.rooms-list {
+  list-style: none;
+  display: inline-block;
+  border: solid 1px #a3a3a3;
+  /* background-color: var(--lighterDark); */
+  background-color: var(--warmGray);
+  min-height: 100px;
+  height: calc(150px + 8.5625vw);
+  margin: auto;
+  padding: 0 var(--spaceSize);
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.rooms-list::-webkit-scrollbar {
+  width: 6px;
+}
+.rooms-list::-webkit-scrollbar-thumb {
+  background-color: var(--coolGray800);
+}
+.rooms-list::-webkit-scrollbar-track {
+  background-color: var(--trueGray600);
+}
+.rooms-list__room {
+  font-family: "Arial", serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: calc(1px + 1.5625vw);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 4px;
+  background-color: var(--coolGray700);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.199);
+  font-weight: 500;
+}
+.rooms-list__span {
+  color: var(--orange);
+}
+.rooms-list__room:hover {
+  background-color: var(--darkRed);
+}
+/* .rooms-list__room:hover .rooms-list__span {
+  /* color: red; */
+/* } */
+.rooms_no-connection {
+  margin: auto;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  font-family: fantasy;
+  color: var(--shadow)
+}
+
+/* ----------------------------- ROOM ------------------------- */
+.room {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  margin: auto;
+  width: 95%;
+  max-width: 800px;
+
+  background-color: var(--dark);
+  border-radius: 6px;
+  box-shadow: 0 0 10px 3px black;
+  padding: var(--spaceSize);
+  /* min-height: 80vh !important; */
+}
+.room__container {
+  width: 100%;
+  position: relative;
+}
+.room__firstline {
+  display: flex;
+  justify-content: space-between;
+}
+.room__title {
+  text-align: left;
+  font-size: 1.4rem;
+  padding-bottom: 5px;
+  line-height: 0px;
+}
+.room__leavebtn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  background-color: var(--darkRed);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 10px 2px var(--darkRed);
+  transition: 500ms all;
+  font-size: 0.6rem;
+  border: 2px solid black;
+}
+.room__leavebtn:hover {
+  box-shadow: 0 0 20px 5px var(--darkRed);
+}
+.room__title span {
+  vertical-align: 7px;
+  margin-left: 10px;
+}
+/* ----------------------------------------------------------------- */
+.room__main {
+  display: flex;
+  width: 100%;
+  height: 94%;
+
+  justify-content: space-between;
+  /* flex-wrap: wrap-reverse; */
+}
+.room__chat {
+  position: relative;
+}
+.game__form {
+  flex: 1;
+  padding: var(--spaceSize);
+  position: relative;
+  height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+  .room__main {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .room {
+    max-width: 400px;
+    height: 450px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .room__chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    transform: translateX(-400px);
+    transition: 1s all;
+    transition-delay: 250ms;
+    z-index: 30;
+  }
+
+  .chat__messages {
+    /* height: inherit; */
+    height: 370px;
+    display: inline-block;
+    overflow: scroll;
+    /* display: none; */
+  }
+
+  .chat__messages {
+    padding: var(--spaceSize);
+    width: 100%;
+    display: inline-block;
+    height: 450px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  .chat__messages::-webkit-scrollbar {
+    width: 10px;
+    background-color: red;
+  }
+  .chat__messages::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgb(142, 142, 142);
+    cursor: grab;
+    border-radius: 4px;
+  }
+  .chat__messages::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: rgb(41, 41, 41);
+  }
+  .icon {
+    transition: 1s all;
+  }
+  .icon--rotate {
+    rotate: 180deg;
+  }
+}
+.chat__form {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.886);
+  z-index: 10;
+}
+.chat__textarea {
+  transition: 200ms all;
+  resize: none;
+  font-family: cursive;
+  width: 70%;
+  border-radius: 4px;
+  border: none;
+  height: 20px;
+  outline: none;
+  color: black;
+  padding: 0px 10px;
+  overflow: hidden;
+}
+.chat__btn {
+  width: 20%;
+  min-width: 110px;
+  padding: 2px 0px;
+  text-align: center;
+  font-family: cursive;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 500ms all;
+  margin: auto;
+  color: black;
+}
+.chat__btn:hover {
+  box-shadow: 0 0 15px 2px white;
+}
+@media only screen and (max-width: 450px) {
+  .room__chat {
+    position: relative;
+    height: 300px;
+  }
+  .game__form {
+    flex: 1;
+    padding: var(--spaceSize);
+    position: relative;
+  }
+  .room__main {
+    display: flex;
+    width: 100%;
+    /* height: 200px; */
+
+    justify-content: space-between;
+    /* flex-wrap: wrap-reverse; */
+  }
+  .room__container {
+    height: 200px;
+  }
+  .room {
+    height: 350px !important;
+    display: block;
+  }
+}
+
+@media screen and (orientation: landscape)  and (max-width: 500px){
+  .lobby__container {
+    height: 200px;
+  }
+  .rooms-list {
+    height: 100px !important;
+  }
+  .lobby-form__group {
+    width: 200px;
+  }
+  .lobby-form__input {
+    width: 100px;
+  }
+  .room__chat {
+    position: relative;
+    height: 250px;
+  }
+  .chat__messages {
+    height: 250px !important;
+  }
+  .game__form {
+    flex: 1;
+    padding: var(--spaceSize);
+    position: relative;
+  }
+  .game-form__canvas {
+    height: 0px;
+  }
+  .room {
+    height: 300px !important;
+  }
+  .room__container {
+    height: 200px;
+  }
+  .game__canvas {
+    width: 100%;
+  }
+}

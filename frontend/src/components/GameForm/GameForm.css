@@ -1,0 +1,87 @@
+.game-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.game-form__form {
+  width: 100%;
+  max-width: 200px;
+  font-family: "Press Start 2P";
+}
+
+.game-form__form canvas {
+  display: flex;
+  margin: auto;
+}
+.hero-pick {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-pick__input {
+  width: 0;
+  visibility: hidden;
+}
+.hero-pick__label {
+  font-size: 1rem;
+  color: red;
+  transition: 500ms all;
+  cursor: pointer;
+}
+.hero-pick__label:hover {
+  color: red;
+}
+.set-time {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.set-time__title {
+  padding: 1rem;
+}
+.set-time__group {
+  width: 200px;
+}
+.set-time__input {
+  width: 0;
+  visibility: hidden;
+}
+.set-time__label {
+  transition: 500ms all;
+  padding: 0.5rem;
+}
+
+.game-form__button {
+  display: flex;
+  margin: auto;
+  padding: 8px 50px;
+  margin-top: 2rem;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.game-form__button:hover {
+  box-shadow: 0 0 10px 1px white;
+}
+.btn--ready {
+  background-color: var(--teal);
+  box-shadow: 0 0 10px 1px white;
+}
+.btn--notready {
+  background-color: var(--darkRed);
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.29);
+}
+@media only screen and (max-width: 450px) {
+  .game-form__canvas {
+    height: 100px;
+  }
+  .set-time__title {
+    padding: 0.3rem;
+    margin-top: 0rem;
+  }
+  .game-form__button {
+    margin-top: 1rem;
+  }
+}

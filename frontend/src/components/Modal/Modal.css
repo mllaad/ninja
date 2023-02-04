@@ -1,0 +1,165 @@
+/* ---------- MODAL NORMAL ----------- */
+.modalnormal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  backdrop-filter: blur(2px);
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s all;
+  font-family: Shabnam;
+}
+
+.modalnormal__main {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  position: relative;
+  pointer-events: none;
+}
+
+.modalnormal__content {
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: black;
+  pointer-events: none;
+  display: flex;
+  margin: auto;
+  text-align: center;
+}
+/* modifiers */
+.modalnormal--show {
+  visibility: visible;
+  opacity: 1;
+}
+.modalnormal--hide {
+  /* transition-delay: 100ms ; */
+
+  /* visibility: hidden; */
+  transition: 1s all;
+  opacity: 0;
+}
+
+/* ----------------------  MODAL ERROR ---------------------------- */
+.modalerror {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  /* backdrop-filter: brightness(90%); */
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.1s all;
+  font-family: Shabnam;
+}
+.modalerror__main {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  position: relative;
+  /* pointer-events: none; */
+}
+.modalerror__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.modalerror__content {
+  transition-delay: 100ms;
+  /* visibility: hidden; */
+  margin: auto;
+  background-color: black;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+/* modifiers */
+.modalerror--show {
+  visibility: visible;
+  opacity: 1;
+}
+.modalerror--hide {
+  transition-delay: 100ms;
+  visibility: hidden;
+}
+
+/* ----------------------- move -------------------------------- */
+.modalmove {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  backdrop-filter: blur(3px);
+  /* backdrop-filter: brightness(60%); */
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s all;
+  font-family: Shabnam;
+  /* background-color: red; */
+}
+.modalmove__main {
+  margin: auto;
+  /* width: 400px; */
+  /* height: 400px; */
+  display: flex;
+  position: relative;
+  /* pointer-events: none; */
+  transform: translate(0, -600px);
+  transition: 1s all;
+}
+.modalmove__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.modalmove__content {
+  transition-delay: 100ms;
+  /* visibility: hidden; */
+  text-align: center;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 10px 2px rgba(252, 252, 252, 0.358);
+  padding: 2rem;
+  border-radius: 8px;
+  /* overflow: scroll; */
+}
+/* modifiers */
+.modalmove--show {
+  visibility: visible;
+  opacity: 1;
+}
+.modalmove--hide {
+  transition-delay: 100ms;
+  visibility: hidden;
+}
+.main--show {
+  transform: translate(0, 0);
+}
+.main--hide {
+  transform: translate(0, -600px);
+}
